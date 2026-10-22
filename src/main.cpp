@@ -1,4 +1,8 @@
 #include "main.h"
+const double CARTRIDGERPM = 600.0;
+const double MOTORTEETH = 67;     //idk fill in at school
+const double WHEELTEETH = 76l;     //fill in later
+const double TOTALRPM = CARTRIDGERPM*MOTORTEETH/WHEELTEETH;
 
 /////
 // For installation, upgrading, documentations, and tutorials, check out our website!
@@ -13,7 +17,7 @@ ez::Drive chassis(
 
     7,      // IMU Port
     3.25,  // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
-    343);   // Wheel RPM = cartridge * (motor gear / wheel gear)
+    TOTALRPM);   // Wheel RPM = cartridge * (motor gear / wheel gear)
 
 // Uncomment the trackers you're using here!
 // - `8` and `9` are smart ports (making these negative will reverse the sensor)
